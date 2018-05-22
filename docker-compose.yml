@@ -10,13 +10,13 @@ services:
     restart: always
 
   api:
-    image: dahln/private:cdp_api.18.5.22.2
+    image: dahln/glubfish:glubfish_api.18.5.22.2
     links:
       - db
     restart: always
 
   nginx:
-    image: dahln/private:cdp_nginx.18.5.22.2
+    image: dahln/glubfish:glubfish_nginx.18.5.22.2
     links:
       - api
     ports:
