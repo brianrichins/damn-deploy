@@ -1,0 +1,25 @@
+version: '3.5'
+ 
+services:
+  db:
+    image: mongo
+    ports:
+      - 27017:27017
+    volumes:
+      - /home/dahln/data/db:/data/db
+    restart: always
+
+  api:
+    image: dahln/private:cdp_api.18.5.22.2
+    links:
+      - db
+    restart: always
+
+  nginx:
+    image: dahln/private:cdp_nginx.18.5.22.2
+    links:
+      - api
+    ports:
+      - "80:80"
+      - "443:443"
+    restart: always
