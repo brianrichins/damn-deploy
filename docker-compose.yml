@@ -10,13 +10,13 @@ services:
     restart: always
 
   api:
-    image: dahln/glubfish:glubfish_api.18.7.10.1
+    image: dahln/glubfish:glubfish_api.18.8.1
     links:
       - db
     restart: always
 
   nginx:
-    image: dahln/glubfish:glubfish_nginx.18.7.10.1
+    image: dahln/glubfish:glubfish_nginx.18.8.1
     links:
       - api
     ports:
