@@ -10,13 +10,13 @@ services:
     restart: always
 
   api:
-    image: damnstack/stack:stack_api.18.9.4
+    image: damnstack/stack:stack_api.18.9.5
     links:
       - db
     restart: always
 
   nginx:
-    image: damnstack/stack:stack_nginx.18.9.4
+    image: damnstack/stack:stack_nginx.18.9.5
     links:
       - api
     ports:
