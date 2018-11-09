@@ -10,13 +10,13 @@ services:
     restart: always
 
   app:
-    image: damnstack/stack:stack_app.4.0.0
+    image: damnstack/stack:stack_app.4.0.1
     links:
       - db
     restart: always
 
   nginx:
-    image: damnstack/stack:stack_nginx.4.0.0
+    image: damnstack/stack:stack_nginx.4.0.1
     links:
       - app
     ports:
