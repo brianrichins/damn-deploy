@@ -9,16 +9,16 @@ services:
       - /home/dahln/data/db:/data/db
     restart: always
 
-  api:
-    image: damnstack/stack:stack_api.18.9.7
+  app:
+    image: damnstack/stack:stack_app:4.0.0
     links:
       - db
     restart: always
 
   nginx:
-    image: damnstack/stack:stack_nginx.18.9.7
+    image: damnstack/stack:stack_nginx.4.0.0
     links:
-      - api
+      - app
     ports:
       - "80:80"
       - "443:443"
