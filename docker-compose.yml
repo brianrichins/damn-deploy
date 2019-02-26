@@ -10,13 +10,13 @@ services:
     restart: always
 
   api:
-    image: dahln/damn-deploy:damn_api.5.0.4
+    image: dahln/damn-deploy:damn_api.5.1.0
     links:
       - db
     restart: always
 
   nginx:
-    image: dahln/damn-deploy:damn_proxy.5.0.4
+    image: dahln/damn-deploy:damn_proxy.5.1.0
     links:
       - api
     ports:
