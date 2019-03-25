@@ -5,18 +5,16 @@ services:
     image: mongo
     ports:
       - 27017:27017
-    volumes:
-      - /home/dahln/data/db:/data/db
     restart: always
 
   api:
-    image: dahln/damn-deploy:damn_api.5.1.0
+    image: dahln/damn-deploy:damn_api.rpi.1
     links:
       - db
     restart: always
 
   nginx:
-    image: dahln/damn-deploy:damn_proxy.5.1.0
+    image: dahln/damn-deploy:damn_proxy.rpi.1
     links:
       - api
     ports:
